@@ -45,6 +45,9 @@ public class EventListenner {
     @OnDisconnect
     public void onDisconnect(SocketIOClient client) {
         //此处可根据session或Cookie 删除客户端缓存
+        String no0 = client.getHandshakeData().getSingleUrlParam("no");
+
+        System.out.println("工号为no ="+ no0+"的用户断开WebSocket连接");
 
         System.out.println("关闭连接");
     }
