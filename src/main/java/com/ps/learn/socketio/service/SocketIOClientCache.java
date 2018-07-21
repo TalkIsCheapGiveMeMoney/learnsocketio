@@ -31,6 +31,11 @@ public class SocketIOClientCache {
         clients.remove(msgBean.getFrom());
     }
 
+    //用户退出时移除
+    public void remove(String num) {
+        clients.remove(num);
+    }
+
     //获取所有
     public  SocketIOClient getClient(String to) {
         return clients.get(to);
