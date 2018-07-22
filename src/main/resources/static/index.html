@@ -34,8 +34,14 @@
 <form class="well form-inline" onsubmit="return false;">
     <input id="to" class="input-xlarge" type="text" placeholder="to. . . " />
     <input id="content" class="input-xlarge" type="text" placeholder="content. . . " />
-    <button type="button" onClick="sendMessage()" class="btn">Send</button>
+
+    <input accept="image/*" name="upimage" id="upload_file" type="file" onchange="gen_base64()">
+
+    <button type="button" onClick="sendMessage()" class="btn">SendWord</button>
+
+    <button type="button" onClick="sendImg()" class="btn">SendImage</button>
     <button type="button" onClick="sendDisconnect()" class="btn">Disconnect</button>
+    <img src="data:image/jpeg;base64,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" id="base64">
 </form>
 </body>
 <script type="text/javascript">
@@ -64,9 +70,24 @@
         socket.emit('OnMSG', {
             from : from,
             to : to,
-            content : content
+            content : content,
+            messageType : "word"
         });
     }
+
+    function sendImg() {
+        var from = username;
+        var to = $("#to").val();
+        var content = $("#base64").attr("src");
+        socket.emit('OnMSG', {
+            from : from,
+            to : to,
+            content : content,
+            messageType : "image"
+        });
+    }
+
+
 
     function output(message) {
         var currentTime = "<span class='time' >" + new Date() + "</span>";
@@ -74,10 +95,31 @@
         $('#console').prepend(element);
     }
     function outputData(data) {
-        console.log(data)
-        var currentTime = "<span class='time' >" + new Date() + " from "+data.from+" </span>";
-        var element = $("<span class='username-msg'><div>" + currentTime + "; message == " +data.content + "</div></span>");
-        $('#console').prepend(element);
+        if (data.messageType=="image"){
+            var currentTime = "<span class='time' >" + new Date() + " from "+data.from+" </span>";
+            var element = $("<span class='username-msg'><div>" + currentTime + "; message == <img src="+data.content+"></div>a</span>");
+            $('#console').prepend(element);
+
+        }else {
+            console.log(data)
+            var currentTime = "<span class='time' >" + new Date() + " from "+data.from+" </span>";
+            var element = $("<span class='username-msg'><div>" + currentTime + "; message == " +data.content + "</div></span>");
+            $('#console').prepend(element);
+
+        }
+
     }
+
+//图片转base64
+    function gen_base64() {
+        var file = $('#upload_file')[0].files[0];
+        r = new FileReader();  //本地预览
+        r.onload = function(){
+            $("#base64").attr("src",r.result)
+        }
+        r.readAsDataURL(file);    //Base64
+        console.log( $("#base64").attr("src"))
+    }
+
 </script>
 </html>

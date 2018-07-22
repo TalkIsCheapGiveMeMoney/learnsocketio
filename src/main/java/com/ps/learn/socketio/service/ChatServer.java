@@ -25,6 +25,9 @@ public class ChatServer  implements InitializingBean {
         socketConfig.setTcpNoDelay(true);
         socketConfig.setSoLinger(0);
         config.setSocketConfig(socketConfig);
+        //解决图片过大
+//        ERROR 3044 --- [ntLoopGroup-3-7] c.c.s.listener.DefaultExceptionListener  : Max frame length of 65536 has been exceeded.
+        config.setMaxFramePayloadLength(65536000);
         config.setHostname("localhost");
 
         SocketIOServer server = new SocketIOServer(config);

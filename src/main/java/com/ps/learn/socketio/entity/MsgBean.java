@@ -7,6 +7,7 @@ public class MsgBean {
     private String from;
     private String to;
     private String content;
+    private String messageType;//用来区分文字消息和图片消息
 
     public String getFrom() {
         return from;
@@ -25,6 +26,14 @@ public class MsgBean {
     }
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public String getMessageType() {
+        return messageType;
+    }
+
+    public void setMessageType(String messageType) {
+        this.messageType = messageType;
     }
 
     @Override
