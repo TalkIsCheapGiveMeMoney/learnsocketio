@@ -20,6 +20,7 @@ public class ChatServer  implements InitializingBean {
         Configuration config = new Configuration();
         config.setPort(9098);
 
+
         SocketConfig socketConfig = new SocketConfig();
         socketConfig.setReuseAddress(true);
         socketConfig.setTcpNoDelay(true);

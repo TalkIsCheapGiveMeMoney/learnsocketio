@@ -9,6 +9,9 @@ public class MsgBean {
     private String content;
     private String messageType;//用来区分文字消息和图片消息
 
+    public MsgBean() {
+    }
+
     public String getFrom() {
         return from;
     }
