@@ -14,4 +14,10 @@ public class SocketIOResponse {
         System.out.println("推送消息");
         client.sendEvent("OnMSG", bean);
     }
+
+
+    public void hold(SocketIOClient client) {
+        System.out.println("推送消息hold");
+        client.sendEvent("hold");
+    }
 }

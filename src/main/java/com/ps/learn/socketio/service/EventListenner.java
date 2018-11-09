@@ -31,7 +31,7 @@ public class EventListenner {
     }
 
     @OnEvent("OnMSG")
-    public void onSync(SocketIOClient client, MsgBean bean) {
+    public void onMSG(SocketIOClient client, MsgBean bean) {
         System.out.printf("收到消息-from: %s to:%s\n", bean.getFrom(), bean.getTo());
         SocketIOClient ioClients = clientCache.getClient(bean.getTo());
         System.out.println("clientCache");
@@ -40,6 +40,19 @@ public class EventListenner {
             return;
         }
         socketIOResponse.sendEvent(ioClients,bean);
+    }
+
+
+    @OnEvent("hold")
+    public void hold(SocketIOClient client) {
+        String no0 = client.getHandshakeData().getSingleUrlParam("no");
+        SocketIOClient ioClients = clientCache.getClient(no0);
+        System.out.println("clientCache");
+        if (ioClients == null) {
+            System.out.println("你发送消息的用户不在线");
+            return;
+        }
+        socketIOResponse.hold(ioClients);
     }
 
     @OnDisconnect
